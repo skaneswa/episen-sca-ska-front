@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Hello App</h1>
+	<input name="searchTxt" type="text" maxlength="512" id="searchTxt" class="searchField"/>
+	<button onclick="save()">Click me</button>
+	
+
+</body>
+
+<script type="text/javascript">
+  function save(){
+	  var donnees = document.getElementById("searchTxt");
+	  console.log("donnees : " + donnees.value);
+	  var url = 'http://localhost:8080/add/order?name='+donnees.value;
+	   requete = new XMLHttpRequest();
+	   //requete.open('GET', url, true);
+	   requete.open('POST', url, true);
+ requete.setRequestHeader("Content-type", "text/plain");
+	   requete.send('name=jshdj');
+	   
+// 	   requete.onreadystatechange=function(){
+// 		   if (this.readyState===XMLHttpRequest.DONE && this.status === 200){
+			   
+// 		   }
+// 	   }
+	   
+	  console.log("sakana");
+  }
+</script>
+
+</html>
