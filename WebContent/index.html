@@ -16,12 +16,12 @@
   function save(){
 	  var donnees = document.getElementById("searchTxt");
 	  console.log("donnees : " + donnees.value);
-	  var url = 'http://localhost:8080/add/order?name='+donnees.value;
+	  var url = 'http://192.168.99.100:8080/add/order?name='+donnees.value;
 	   requete = new XMLHttpRequest();
 	   //requete.open('GET', url, true);
 	   requete.open('POST', url, true);
  requete.setRequestHeader("Content-type", "text/plain");
-	   requete.send('name=jshdj');
+	   requete.send('name='+donnees.value);
 	   
 // 	   requete.onreadystatechange=function(){
 // 		   if (this.readyState===XMLHttpRequest.DONE && this.status === 200){
